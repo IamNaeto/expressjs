@@ -1,0 +1,6 @@
+Get Requests
+- In other to request data from the client to the backend server, you need to make an http request
+- The .get method takes two arguments. The route and the request handler. The request handler is just a call back function that has two arguments; a request argument which contains everything related to the incoming http request and the response object. The response object is what can be used to modify the response and send it back to the user. You can set the status code, you can send back data, text, html, json object etc. 
+- The .send method is use to send data, text, html, json objects etc to the client.
+- The .status method is used to set the status of your response. Example successful request have a status code of 200
+- When build apis, it is ideal to prefix the route with /api. If the api is for users it will be /api/users
