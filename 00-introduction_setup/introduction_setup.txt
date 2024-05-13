@@ -1,0 +1,20 @@
+ExpressJS Introduction Setup
+- Express is the most popular server side web framework in the nodejs ecosystem. it is widely use by many developers and its used by a large of companies.
+- it is very popular because it is very easy to learn and setup
+- It is unopinionated meaning there is really no much to worry about configuring bunch of different properties before using it. All to do is to just install the package, instantiate the express app and then listen to ports and then begin listening to requests.
+
+Setting Up ExpressJS App
+- On the terminal, create and cd into your express app folder
+- Run the code npm init -y to initialize this folder as an npm repository. This will automatically give us a package.json file that is generated for us.
+- Open up vscode or any code editor by running code .
+- Install express by running the code npm install express. This installs the express package.
+- Install nodemon as a dev dependence by running the code npm i -D nodemon. What nodemon does is to run application in watch mode so that as changes is made and save, the process will authomatically restart based on file changes so that you dont have to manually exit out of the process and restart again. 
+- Right inside the script object in the package.json file, setup a start:dev script and that will use the nodemon to run our main javascript file
+- Additionally create a one more script called start and this will be a simple script and it will just use a regular node command to run our application not on watch mood so this will be for production. 
+- Lastly, inside the package.json file at its bottom, set the type property to module. This will allow the use of ESM as the module system so that way it will be possible to use the modern import, export statements instead of having to use require to import modules and module.exports to exports them. Therefore ecause of the use of ESM modules, the file extensions will be .mjs instead of .js.
+- Create a src folder and inside of it create a new file called index.mjs
+- Inside the index.mjs file, import express from 'express'
+- Declare a variable e.g app and reference express and invoke that fucntion by using parenthensis
+- Now that we have our express app, you can reference the app variable, whenever the dot operator is used a lot of properties to reference is showned
+
+- npm run start:dev is use to start our application using nodemon
