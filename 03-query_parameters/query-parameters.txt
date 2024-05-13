@@ -1,0 +1,4 @@
+Query Parameters
+- Have you seen something like this localhost:3000/api/products?key=value&key2=value2 in a website before? Those parenters after products are the query parameters
+- When making a get request, its just performing a request or http request to get data in read only format. Datas are manipulated atall on the servers side.
+- request.query is use to get the query parameters from the query string
