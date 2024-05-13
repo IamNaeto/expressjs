@@ -1,0 +1,4 @@
+Route Parameters
+- Route parameters is used to pass in a dynamic value in the route path.
+- This done by placing the routh parameter at the end or after the route or endpoint
+- request.params is an object that gives all of the route parameters
