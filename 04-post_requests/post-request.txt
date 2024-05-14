@@ -1,0 +1,9 @@
+Post Requests
+- Sending data from the client side via making a http request to the backend or server side is know as making a post request
+- That data being sent is know as a request body. That is to say whenever a post request is made the data that is send to the backend server is sent via a payload or request body.
+- Tools/extension like Thunder Client is a light weight rest api client for vscode
+- To register a post request, we just the post method
+- The post method is very similar to all the other http verb methods such as get, put, delete. It takes in a path, and also a reuest and response call back function.
+
+- Middleware is just a function that have to be invoked before sent api request are being handled
+- .use() method is the method that is used to register middleware
