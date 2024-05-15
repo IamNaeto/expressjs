@@ -1,0 +1,9 @@
+Put Requests
+- Put request is another http request method that can be used to handle in an express api
+- Other http request methods apart from the get, post and put methods are patch and delete
+- Put and pact request, both are used to update data but are technically different on how data is updated.
+- A patch request update a record but it updates it partially. What this means is that it does not update the entire data itself but update a portion or partial field of that entire record/resource
+- The put request updates not only the partial entity of that record but the entire resource/record field in the request body. It includes every field in the request body when making a request with it even if not updating it.
+- Put is for updating the entire record
+- Patch updates only a portion of the data record field
+- Delete method is use to delete records from the database
