@@ -1,0 +1,5 @@
+Delete Requests
+- Delete request is used to delete things on the backend server and the backend server deletes it from a data source like a sql server or mongodb
+- With delete request, there is no need to pass a request body/payload
+
+- For other https request methods, refer to mozilla docs
