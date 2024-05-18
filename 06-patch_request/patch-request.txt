@@ -1,0 +1,4 @@
+Patch Requests
+- Patch request basically allows us to update an entity or a resource or a record partially without having to include every single field in the record we are trying to update
+- Both patch and put requests are used to update data but the way the data is updated is different.
+- Put is used to update the entire resource on the user object while patch is used to update certain fields on the user object.
