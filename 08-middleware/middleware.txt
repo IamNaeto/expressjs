@@ -9,6 +9,8 @@ Using Middleware
     * Enabling it globally using the use() method and passing in the middleware as an argument. This allows all the routes to have the middleware be invoked right before its request handler is called. 
         - Middleware must be registered at the top right before a route if using the app.use() registery method to enable middleware globally. 
         - It is also worthy to note that in the app.use() method call, you can also pass in as many middlewares as you want and it will also be called in sequesntial other as well.
-    * Enabling it for each specific endpoints by passing the middle function as an argument in that specific endpoint. You dont actually need to assigned the middleware to a variable and pass it to the specific endpoint, you can just pass it directly to the endpoint; request, response, next and call the next function which helps to go ahead and call the next middleware. 
+    * Enabling it for each specific endpoints by passing the middle function as an argument in that specific endpoint. 
+        - You dont actually need to assigned the middleware to a variable and pass it to the specific endpoint, you can just pass it directly to the endpoint; request, response, next and call the next function which helps to go ahead and call the next middleware.
+        - Next() also takes an argument but it expects error object or null. When an error object is passed, it will throw an error at the express level, but when not passed, it wont throw any error and just assumes that everything is successful.
 
 - Middleware can be used also be used to grab a resusable function or logics and pass it into a http method instead of rewriting the logics in the http methods.
