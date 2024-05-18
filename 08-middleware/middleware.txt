@@ -1,0 +1,14 @@
+Middleware
+- Middleware can be defined differently in different environments but in the general sense, its is meaning is that its just a mare process between one or two or many different functions or other processes
+- In the context of expressjs, a middleware is just a function that can have logic but the middleware function handler also is a request handler as well. That means the middleware function has the request, response argument as well
+- The middleware function can be used to return response if you want.
+- Additionally, the middleware function also have access to the next argument which is a function that is called when done with the middleware
+
+Using Middleware
+- In other to use middleware there are two ways which can be either
+    * Enabling it globally using the use() method and passing in the middleware as an argument. This allows all the routes to have the middleware be invoked right before its request handler is called. 
+        - Middleware must be registered at the top right before a route if using the app.use() registery method to enable middleware globally. 
+        - It is also worthy to note that in the app.use() method call, you can also pass in as many middlewares as you want and it will also be called in sequesntial other as well.
+    * Enabling it for each specific endpoints by passing the middle function as an argument in that specific endpoint. You dont actually need to assigned the middleware to a variable and pass it to the specific endpoint, you can just pass it directly to the endpoint; request, response, next and call the next function which helps to go ahead and call the next middleware. 
+
+- Middleware can be used also be used to grab a resusable function or logics and pass it into a http method instead of rewriting the logics in the http methods.
