@@ -1,0 +1,36 @@
+Validator
+- Express validator is use to validate incoming data for our express api
+
+Installation
+* npm i express-validator
+
+Use
+- Import a function from the express-validator package
+    * import {} from "express-validator"
+    * These functions being imported will be used as a middleware meaning they are going to be called by passing it as argument to our request methods such as app.get() and also make sure we are calling the right before our finial request handler which is also a middleware aswell
+    * When these functions are called, it creates a validation chain. Thats to say when these functions are called it returns instance of validation chain, giving access to a bunch of methods to use to determine what to validate
+     * These functions also don't throw an error, they dont reject the request, soo they have to be handled inside the request handler in the function body
+- query function is used for validating query parameter
+    * With query parameters in expressjs, they are always parsed as strings even if you pass a number
+- validationResult() function is used to grab and extract the validation errors which can be used to handle validation error.
+    * When called, the request object is passed to it
+- withMessage method is use to set the error message for the previous validator
+
+- body function is use to validate request bodies.
+    * When called what you want to validate is passed into it. Using the validation chain we now have access to the various methods to determine what to validate
+    * In a case where we want to validate multiple fileds, what we have to do is to pass an array of body functions calls
+- isEmpty() function returns true if there are no errors and false if there are errors
+- matchedData() function is use to grab or can be said to grab all the datas that have been validated. Request is normally passed into it as an argument.
+    * matchedData() function can be used in place of using the request body to grab the datas
+
+- Additionally, schema in express-validator can be used to validate request bodies in a cleaner way.
+- The schema is just an object that have all of our validators defined
+- checkSchema function is used to create a list of validation chains
+
+Setup
+- Create another folder in your src folder and name it utiles
+- Inside the utiles folder, create a validationSchema.mjs file
+- Create and export a variable called createUserValidationSchema which will be assigned to an object
+- Inside the object, define the fields to be validated. The fields are mostly objects and the fields object pass in what to validate which is normally an object too, lastly pass in the options and errorMessages
+- Inside the index file in the src folder, import the createUserValidationSchema function we creted from ./utiles/validationSchema.mjs file and also import checkSchema from "express-validator"
+- Pass in the imported checkSchema function as a second argument to the http method you want to validate its request body and pass in the schema definition which is the function we created and imported from the "./utiles/validationSchema.mjs" file.
