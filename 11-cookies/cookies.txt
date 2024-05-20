@@ -1,0 +1,3 @@
+Cookies
+- Cookies or http cookies are small piece of data that the webserver sends to the browser
+- Http is stateless and using cookies enables the server to send a cookie to the web browser. That cookies typically is going to be some unique value so that way when the browser receives them, they can distinguise who that cookie belongs to and they can send dynamic data based on the cookies value.
