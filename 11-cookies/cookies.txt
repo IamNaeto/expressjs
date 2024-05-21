@@ -1,3 +1,10 @@
 Cookies
 - Cookies or http cookies are small piece of data that the webserver sends to the browser
 - Http is stateless and using cookies enables the server to send a cookie to the web browser. That cookies typically is going to be some unique value so that way when the browser receives them, they can distinguise who that cookie belongs to and they can send dynamic data based on the cookies value.
+- .cookie method takes in a total of three arguments; name string, val string and options. Option is optional. Name string is use to set the name of the cookie while the val string is use to set the value of the cookie. Option is use to pass in the MaxAge which is use to set the expiry duration usually inj milseconds
+- cookie parser is a third party package that is used to parse cookies.
+- It can be installed using the command npm i cookie-parser
+- It is important to note that cookie parser is also a middleware
+- cookie parser is normally registered right before all our routes are being registered. Otherwise it won't parse the cookies for those routes and we won't be able to use it.
+- We can register cookie parser to express using app.use(cookieParser()). cookieParser is a function imported from cookie-parser and passed into the app.use. The cookieParser function can can also take additional arguments if needed. Example; in the case of a signed cookie which is a cookie that has a secret, we will have to pass in a secret in that cookieParser function call, and this secret is use to parse the signed cookie
+- Signed argument passed to option argument of .cookie method indicates if the cookie should be signed. When set to true, it indicates its signed

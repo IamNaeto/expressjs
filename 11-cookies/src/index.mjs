@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 
 app.use(express.json());
-app.use(cookieParser("helloworld")); //Registering cookieParser to express
+app.use(cookieParser("helloworld")); //Registering and enabling cookieParser to express
 app.use(routes);
 
 const PORT = process.env.PORT || 3000;
