@@ -3,4 +3,6 @@ Routers
 - It helps us to group our api endpoints based on domain.
 - The domain can be user domain which handles everything related to users such creating a user, updating a user, deleting a user etc, or product domain for everything related to products.
 - import { Router } from "express" is a function to call to create an instance of an express router
-- The router instance has almost all the same exact methods and properties that the express app instance has such as the get, post, delete etc. The router is like a mini application in our entire express app that can group together all of our request
+    * The router instance has almost all the same exact methods and properties that the express app instance has such as the get, post, delete etc. 
+    * The router itself is like a mini application in our entire express app that can group together all of our. Soo we can register a request on the router, but then we just need to register router to express
+- router takes the same method argument such as path and handlers or middleware functions.
