@@ -1,0 +1,18 @@
+Session Pt. 1
+- Session represents the duration of a user on a website
+- By default http is stateless, soo we dont know who is making a request to the serever. Because of that requests need to tracked to know where they are coming from.
+- One common use of sessions is to manage user authentication
+- Sessions are created on the serever by genereating an object with the session id. When an http request is sent to the server from the web browser, the response can  return with instructions to set a cookie with a session id so that it can be saved in the browser. This allows the browser to send a cookie on subsequent request to the server. The server can then parse the cookies from text to json then verify the session id that was from the client and determine who the request was sent from. Whenever the browser sends the cookies on each request, the server can lookup which user pertains to the session as the server maintain the mapping of each session id to the user.
+- Using the express session library, we wil be able to implement sessions
+- The express session package can be installed by running npm i express-session
+- In the root file, index.mjs which is our root file, import session from "express-session
+- Session import is a middleware function and we can register it by using app.use(session())
+- Note that session should be register right before any endpoint in your application
+- Next is to configure some options for express session. 
+    * First thing is to set a secret ehich is going to be a string. 
+    * Another property is saveUninitialized. This property alongside another property called reSaved have to do with session stores. By default express session does use in-memory store but its not advisable to set saveUninitialized to false when you dont want to save unmodified session data to the session store. So what that means is that by default if you have every single user visiting your website and they are not doing anything and they are just visiting it, if you have set saveUninitialized to true, it will actually save a session object to the store even if the session object have nothing atall and that can actually take up memory with a random bunch of session object living in the session store. Ideally its recommended that the saveUninitialized is set to false and its recommended when building user authentication and mananging user sessions.
+    * resave property has to do with forcing a session to be save back to the session store even if the session itself was never modified atall.
+    * cookie property is use to configure how long we want the cookie to live because cookie can actually expire. This is good if you have a user login system where you want a user to be loggedin to your website a maximium of a specific duration. The value is a number and its measured in milliseconds
+
+- When a session data object is modified express session will set a cookie and that cookie will be sent to the browser or client side and the cilent side will be store that cookie and then on subsequent request or future request that cookie will be sent to the server assuming it has not been expired. The server will go through the express session middleware and it will validate that cookie and make sure its not an invalid cookie or has not been expired, then the express wont generate a new session or session id atall.
+- By modifying session data object we can begin tracking users that are using our website or api. If we don't there will generated brown new sessions all the time
