@@ -1,0 +1,5 @@
+Passport.js Authentication
+- PassportJs is used to integrate Authentication
+- Installation
+    * npm i passport passport-local
+- Import : import passport from "passport"
