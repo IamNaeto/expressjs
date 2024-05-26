@@ -1,0 +1,2 @@
+Session Pt - 2
+- We can map a single sessionID to a realistic user in our application
