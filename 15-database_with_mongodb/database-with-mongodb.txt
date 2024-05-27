@@ -1,0 +1,5 @@
+Database With MongoDB
+- Make sure mongodb is installed on your local system, then you can make use of mongodb compass or access the web site at https://www.mongodb.com/ to signin up and use mongodb for free
+- Install mongoose using the command
+    * npm i mongoose
+- Import mongoose and connect it to database
